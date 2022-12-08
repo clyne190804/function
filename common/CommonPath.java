@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CommonPath {
 
@@ -76,7 +77,7 @@ public class CommonPath {
         if(sortDivision.equals("ASC")){
             return directoryList.stream().sorted(Comparator.naturalOrder()).toList();
         }else if(sortDivision.equals("DESC")){
-            return directoryList.stream().sorted(Comparator.reverseOrder()).toList();
+            return directoryList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         }else{
             return directoryList.stream().sorted(Comparator.naturalOrder()).toList();
         }
